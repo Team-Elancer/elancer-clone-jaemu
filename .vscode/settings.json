@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.addMissingImports": true
+  },
+  "cSpell.words": [
+    "camelcase",
+    "chackra",
+    "Chakra",
+    "Dotum",
+    "svgs",
+    "truetype",
+    "unstyled"
+  ],
+  "files.exclude": {
+    "**/node_modules": false
+  },
+  "search.exclude": {
+    "**/node_modules": false
+  },
+}

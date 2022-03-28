@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@images/*": ["public/assets/images/*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+    },
+    "allowJs": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "theme/index.js",
+    "theme/global.js",
+    "theme/foundations/sizes.js",
+    "theme/components/Container.js",
+    "theme/Fonts.js"
+, "utils/shadeColor.js", "Icon/incons.js"  ],
+  "exclude": ["node_modules"]
+}
