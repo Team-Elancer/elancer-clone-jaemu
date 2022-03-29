@@ -37,8 +37,9 @@ const FilterArticleList = () => (
         variant="outline"
         href="/"
         mt="6"
-        px="2"
-        fontSize="xs"
+        px={{ base: 2, sm: 4 }}
+        py={{ base: 2, sm: 5 }}
+        fontSize={{ base: 'xs', sm: 'md' }}
         border="2px solid #ddd"
         _hover={{ borderColor: 'black' }}
         rounded="full"

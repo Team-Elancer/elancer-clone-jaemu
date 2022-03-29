@@ -10,8 +10,8 @@ import CKImage from '@components/CKImage';
 import { H1 } from '@components/Heading';
 import FilterArticleList from '@components/TabArticleList';
 import mainBannerImg from '@images/20220308.png';
-import Footer from 'layouts/Footer';
-import Header from 'layouts/Header';
+import Footer from 'layouts/BaseLayout/Footer';
+import Header from 'layouts/BaseLayout/Header';
 
 import LinkGrid from './LinkGrid';
 import Carousel from './MultipleSlider';
