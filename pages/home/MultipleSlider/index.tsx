@@ -9,14 +9,14 @@ import {
   Text,
   Breadcrumb,
   BreadcrumbItem,
-  Button,
   ButtonGroup,
   Center,
+  Button,
 } from '@chakra-ui/react';
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { Navigation } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
 
+import CKIcon from '@components/CKIcon';
 import Image from '@components/CKImage';
 import CKLink from '@components/CKLink';
 import CKSwiper from '@components/CKSwiper';
@@ -48,10 +48,10 @@ const MultipleSlider = ({ moreLink, badgeList }: MultipleSliderProps) => {
     <Box>
       <ButtonGroup d="block" mt="-42px" mb={{ base: 8, sm: 10 }} textAlign="right">
         <Button ref={navigationPrevRef}>
-          <BsChevronLeft />
+          <CKIcon name="chevron-left" />
         </Button>
         <Button ref={navigationNextRef}>
-          <BsChevronRight />
+          <CKIcon name="chevron-right" />
         </Button>
       </ButtonGroup>
       <CKSwiper
@@ -145,8 +145,9 @@ const MultipleSlider = ({ moreLink, badgeList }: MultipleSliderProps) => {
             variant="outline"
             href="/"
             mt="10"
-            px="2"
-            fontSize="xs"
+            px={{ base: 2, sm: 4 }}
+            py={{ base: 2, sm: 5 }}
+            fontSize={{ base: 'xs', sm: 'md' }}
             border="2px solid #ddd"
             _hover={{ borderColor: 'black' }}
             rounded="full"

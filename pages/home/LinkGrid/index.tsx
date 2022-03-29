@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Grid, GridItem, Button, Center, Text } from '@chakra-ui/react';
-import { BsThreeDots } from 'react-icons/bs';
 
+import CKIcon from '@components/CKIcon';
 import CKImage from '@components/CKImage';
 import CKLink from '@components/CKLink';
 import aspImg from '@images/icon-main-asp.png';
@@ -201,7 +201,7 @@ const LinkGrid = () => (
           size="lg"
         >
           <Center w={9} h={9} mt={{ base: 4, sm: 0 }} ml={2} mx={{ base: 'auto', sm: '0' }}>
-            <BsThreeDots />
+            <CKIcon name="three-dots" />
           </Center>
           <Text
             align={{ base: 'center', sm: 'right' }}

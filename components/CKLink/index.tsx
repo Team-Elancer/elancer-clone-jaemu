@@ -3,16 +3,10 @@ import { FC } from 'react';
 import { Button, ButtonProps, ChakraProps, Link as ChackraLink } from '@chakra-ui/react';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
-export interface CKDefaultLinkProps extends Omit<NextLinkProps, 'as'>, ChakraProps {
+export interface CKLinkProps extends Omit<NextLinkProps, 'as'>, ChakraProps, ButtonProps {
   href: string;
+  component?: 'button';
 }
-
-export interface CKButtonLinkProps extends Omit<NextLinkProps, 'as'>, ButtonProps {
-  href: string;
-  component: 'button';
-}
-
-type CKLinkProps = CKDefaultLinkProps | CKButtonLinkProps;
 
 const CKLink: FC<CKLinkProps> = (props: any) => {
   const { href, component, children, ...rest } = props;

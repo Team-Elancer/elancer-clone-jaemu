@@ -9,6 +9,7 @@ import List from './svgs/list.svg';
 import People from './svgs/people.svg';
 import PersonCircle from './svgs/person-circle.svg';
 import Search from './svgs/search.svg';
+import ThreeDots from './svgs/three-dots.svg';
 
 export default {
   'chevron-left': ChevronLeft,
@@ -18,6 +19,7 @@ export default {
   'heart-fill': HeartFill,
   'card-text': CardText,
   'person-circle': PersonCircle,
+  'three-dots': ThreeDots,
   people: People,
   search: Search,
   heart: Heart,

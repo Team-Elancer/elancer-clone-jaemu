@@ -1,4 +1,4 @@
-import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Center, Container, Flex } from '@chakra-ui/react';
+import { Box, Breadcrumb, BreadcrumbItem, Center, Container, Flex } from '@chakra-ui/react';
 
 import CKImage from '@components/CKImage';
 import CKLink from '@components/CKLink';
@@ -16,10 +16,10 @@ const Header = () => (
         <Center>
           <Breadcrumb fontSize={{ base: '10px', sm: 'md' }} separator="|">
             <BreadcrumbItem>
-              <BreadcrumbLink href="/freelancer-list">프리랜서 보기</BreadcrumbLink>
+              <CKLink href="freelancer-list">프리랜서 보기</CKLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink href="project-list">프로젝트 보기</BreadcrumbLink>
+              <CKLink href="project-list">프리랜서 보기</CKLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </Center>
