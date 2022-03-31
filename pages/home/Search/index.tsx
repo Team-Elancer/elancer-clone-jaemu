@@ -26,5 +26,4 @@ const Search = () => (
     </InputGroup>
   </Box>
 );
-
 export default Search;
