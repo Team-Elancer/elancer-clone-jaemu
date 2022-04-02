@@ -5,12 +5,12 @@
       "module-resolver",
       {
         "root": ["."],
-        "alias": {
-          "@images/*": "public/assets/images/*",
-          "@components/*": "components/*",
-          "@pages/*": "pages/*",
-          "@utils/*": "utils/*"
-        }
+        // "alias": {
+        //   "@images/*": "public/assets/images/*",
+        //   "@components/*": "components/*",
+        //   "@pages/*": "pages/*",
+        //   "@utils/*": "utils/*"
+        // }
       }
     ]
   ]
