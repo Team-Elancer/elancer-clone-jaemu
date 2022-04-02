@@ -1,55 +1,63 @@
-import React, { FC, useCallback, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
-import { Item } from 'framer-motion/types/components/Reorder/Item';
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 
 interface IProps {
-  loading?: any;
-  loadMore: (page: number) => void;
+  next: () => void;
+  throttle?: number;
   hasMore?: boolean;
-  children: any;
-  setPage: any;
-  page: any;
+  loader?: React.ReactNode;
+  children: React.ReactNode[];
+  dataLength: number;
 }
 
-const InfinityScroll: FC<IProps> = ({ loading, setPage, page, loadMore, hasMore, children }) => {
-  const observer = useRef<any>(null);
+const InfinityScroll: FC<IProps> = ({ next, dataLength, loader, throttle = 2000, hasMore, children }) => {
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const lastBookElementRef = useCallback(
-    (node) => {
-      if (loading) return;
-      if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
+  useEffect(() => {
+    setLoading(false);
+  }, [dataLength]);
+
+  const observer = useRef<any>(null);
+  console.log(dataLength);
+
+  const lastBookElementRef = (node: ReactJSXElement) => {
+    if (observer.current) observer.current.disconnect();
+    observer.current = new IntersectionObserver((entries) => {
+      setLoading(true);
+      setTimeout(() => {
         if (entries[0].isIntersecting && hasMore) {
-          setPage((prev) => prev + 1);
-          console.log('detected');
+          console.log('execute next');
+          next();
         }
-      });
-      if (node) observer.current.observe(node);
-    },
-    [loading, hasMore],
-  );
+      }, throttle);
+    });
+    if (node) observer.current.observe(node);
+  };
 
   return (
     <div>
-      {React.Children.map(children, (child, index) =>
-        children.length === index + 1
-          ? React.cloneElement(child, {
-              ref: lastBookElementRef,
-              style: { border: '1px solid red' },
-              key: child.title,
-            })
-          : React.cloneElement(child, {
-              style: { marginBottom: '100px' },
-              key: child.title,
-            }),
-      )}
+      {children &&
+        React.Children.map(children, (child, index) =>
+          children.length === index + 1
+            ? React.cloneElement(child as ReactJSXElement, {
+                ref: lastBookElementRef,
+                key: Math.random(),
+              })
+            : React.cloneElement(child as ReactJSXElement, {
+                style: { marginTop: '100px' },
+                key: Math.random(),
+              }),
+        )}
+      {loading && hasMore && loader}
     </div>
   );
 };
 
 InfinityScroll.defaultProps = {
-  loading: undefined,
   hasMore: true,
+  throttle: 2000,
+  loader: <div>loading...</div>,
 };
 
 export default InfinityScroll;
