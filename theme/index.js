@@ -7,15 +7,14 @@ import Heading, { H1, H2 } from './components/Heading';
 import Link from './components/Link';
 import colors from './foundations/colors';
 import fonts from './foundations/fonts';
+import shadows from './foundations/shadows';
 import { breakpoints, sizes } from './foundations/sizes';
 import global from './global';
 
 const overrides = {
-  shadows: {
-    outline: `0 0 0 1px ${colors.primary[500]}`,
-  },
   colors,
   fonts,
+  shadows,
   styles: {
     global,
   },

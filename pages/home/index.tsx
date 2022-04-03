@@ -35,10 +35,10 @@ const Home = () => (
       bgRepeat="no-repeat"
     >
       {/* header */}
-      <Header />
+      <Header type="home" />
       <Container overflow="hidden">
         {/* search */}
-        <Search />
+        <Search h="60px" placeholder="어떤 프로젝트 찾으세요?" rightSpacing={6} />
         {/* main banner */}
         <Flex gap={{ base: 4, sm: 6 }} py="16">
           <CKImage

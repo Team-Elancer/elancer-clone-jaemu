@@ -28,6 +28,7 @@ module.exports = {
     'no-console': 'off',
     'no-alert': 'off',
     'import/no-unresolved': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
     'no-unused-vars': 'warn',
     'react/jsx-uses-react': 'off',
