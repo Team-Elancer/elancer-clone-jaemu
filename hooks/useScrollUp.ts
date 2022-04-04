@@ -21,7 +21,6 @@ function useScrollingUp({ offsetY }: IProps) {
   const updateScroll = () => {
     const { scrollY } = window;
     const isFixedTop = scrollY < offsetY;
-    console.log(isFixedTop);
 
     setIsScrolledUp(isFixedTop);
   };

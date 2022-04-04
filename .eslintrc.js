@@ -21,6 +21,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
   plugins: ['react', '@typescript-eslint', 'prettier', 'chakra-ui'],
   rules: {
     'react/react-in-jsx-scope': 'off',

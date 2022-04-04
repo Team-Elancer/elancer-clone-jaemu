@@ -16,6 +16,7 @@ const Header = ({ type }: { type?: 'home' }) => {
       sx={{
         '.stickyHeader': {
           position: 'fixed',
+          top: '0',
           width: '100%',
         },
       }}
@@ -44,7 +45,7 @@ const Header = ({ type }: { type?: 'home' }) => {
               ) : (
                 !isHome && (
                   <Search
-                    h={10}
+                    h={12}
                     placeholder="어떤 프리랜서를 찾으세요?"
                     iconSize={{ base: 4, sm: 6 }}
                     sx={{ input: { marginTop: '0', _placeholder: { fontSize: '14px' } } }}
