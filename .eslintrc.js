@@ -21,6 +21,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
   plugins: ['react', '@typescript-eslint', 'prettier', 'chakra-ui'],
   rules: {
     'react/react-in-jsx-scope': 'off',
@@ -28,6 +36,7 @@ module.exports = {
     'no-console': 'off',
     'no-alert': 'off',
     'import/no-unresolved': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
     'no-unused-vars': 'warn',
     'react/jsx-uses-react': 'off',

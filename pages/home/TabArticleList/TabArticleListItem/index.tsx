@@ -5,7 +5,7 @@ import { Box, Button, HStack, Badge, Text } from '@chakra-ui/react';
 import CKIcon from '@components/CKIcon';
 import CKSpan from '@components/CKSpan';
 
-const TabArticleListItem = () => {
+const TabArticleListItem = ({ className }: { className: string }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -13,6 +13,7 @@ const TabArticleListItem = () => {
   };
   return (
     <Box
+      className={className}
       pos="relative"
       mb="5"
       px={{ base: 3, sm: 9 }}
@@ -29,6 +30,7 @@ const TabArticleListItem = () => {
         minW="0"
         h="8"
         p="0"
+        bg="blackAlpha.50"
         onClick={handleLike}
         rounded="full"
       >

@@ -1,50 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import { Box } from '@chakra-ui/react';
+import { Box, Container, Text } from '@chakra-ui/react';
 
-import CKImage from '@components/CKImage';
-import InfinityScroll from '@components/InfinityScroll';
+import { H1 } from '@components/Heading';
 import BaseLayout from 'layouts/BaseLayout';
-import { axios } from 'module/client';
 
-const index = () => {
-  const [items, setItems] = useState([]);
+import FilterArticleList from './TabArticleList';
 
-  const [hasMore, setHasMore] = useState(true);
+const index = () => (
+  <BaseLayout>
+    <Container mb={{ base: 20, sm: 36 }}>
+      <Box mt={{ base: 6, sm: 28 }}>
+        <Text fontSize={{ base: 'xs', sm: 'lg' }}>이랜서가 보증하는 IT 파트너스 38만명</Text>
+        <H1 mt="1" lineHeight="36px">
+          프로젝트 등록하면
+          <br />더 정확한 추천을 받을 수 있어요
+        </H1>
+      </Box>
 
-  const [page, setPage] = useState(1);
-
-  const fetchData = async () => {
-    const res = await axios.get(`posts?_page=${page}&_limit=20`);
-
-    setPage((prev) => prev + 1);
-    setItems((items) => [...items, ...res.data] as []);
-    if (res.data.length === 0 || res.data.length < 20) {
-      setHasMore(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return (
-    <BaseLayout>
-      <InfinityScroll
-        dataLength={items.length}
-        throttle={1000}
-        next={fetchData}
-        hasMore={hasMore}
-        loader={<CKImage src="/assets/images/svg/loading.svg" width={200} height={100} />}
+      <Box
+        sx={{
+          '.item': { border: 0, borderTop: '1px solid #ddd', borderRadius: 0, px: 0 },
+          button: { top: 7, right: 0 },
+        }}
       >
-        {items.map((item: any) => (
-          <Box key={Math.random()} mb={20}>
-            {item.body}
-          </Box>
-        ))}
-      </InfinityScroll>
-    </BaseLayout>
-  );
-};
+        {/* filter article list */}
+        <FilterArticleList />
+      </Box>
+    </Container>
+  </BaseLayout>
+);
 
 export default index;
