@@ -8,7 +8,6 @@ import PersonCircleIcon from '@components/CKIcon/svgs/person-circle.svg';
 import searchIcon from '@components/CKIcon/svgs/search.svg';
 import CKImage from '@components/CKImage';
 import { H1 } from '@components/Heading';
-import FilterArticleList from '@components/TabArticleList';
 import mainBannerImg from '@images/20220308.png';
 import Footer from 'layouts/BaseLayout/Footer';
 import Header from 'layouts/BaseLayout/Header';
@@ -16,6 +15,7 @@ import Header from 'layouts/BaseLayout/Header';
 import LinkGrid from './LinkGrid';
 import Carousel from './MultipleSlider';
 import Search from './Search';
+import FilterArticleList from './TabArticleList';
 
 const MOBILE_BOTTOM_MENU = [
   { text: '검색', icon: searchIcon, href: '/' },
@@ -126,7 +126,7 @@ const Home = () => (
         />
 
         {/* filter article list */}
-        <FilterArticleList />
+        <FilterArticleList mt={{ base: 20, sm: 36 }} />
 
         {/* h1 프리랜서 (multiple swiper) */}
         <H1 mb="0">프리랜서</H1>
