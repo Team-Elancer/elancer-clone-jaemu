@@ -12,6 +12,7 @@ import { breakpoints, sizes } from './foundations/sizes';
 import global from './global';
 
 const overrides = {
+  config: { initialColorMode: 'light' },
   colors,
   fonts,
   shadows,
