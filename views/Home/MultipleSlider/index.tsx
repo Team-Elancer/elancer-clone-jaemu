@@ -83,7 +83,7 @@ const MultipleSlider = ({ moreLink, badgeList }: MultipleSliderProps) => {
               <Flex pos="relative" w="full" h={{ base: 28, sm: '168px' }} bg="black" borderTopRadius="xl">
                 <Image src={companyLogoNoneImg} d="flex" alignItems="center" py="2" w="86%" mx="auto" />
               </Flex>
-              <Box p="4" bg="black.800" borderBottomRadius="xl">
+              <Box p="4" bg="blackAlpha.800" borderBottomRadius="xl">
                 <HStack wrap="wrap" mb={{ base: 1, sm: 2 }} shouldWrapChildren>
                   {badgeList?.map((item) => {
                     if (item.styleType === BADGE_STYLE.HIGHLIGHT) {

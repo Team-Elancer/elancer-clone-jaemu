@@ -1,4 +1,4 @@
-import { Tabs, TabList, Tab, TabPanels, TabPanel, Center, Box, chakra, ChakraProps } from '@chakra-ui/react';
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Center, Box, ChakraProps } from '@chakra-ui/react';
 
 import CKLink from '@components/CKLink';
 

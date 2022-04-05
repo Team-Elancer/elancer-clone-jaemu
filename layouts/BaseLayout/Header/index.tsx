@@ -3,7 +3,7 @@ import { Box, Breadcrumb, BreadcrumbItem, Center, Container, Flex } from '@chakr
 import CKImage from '@components/CKImage';
 import CKLink from '@components/CKLink';
 import logoImg from '@images/logo.png';
-import Search from '@pages/home/Search';
+import Search from '@views/Home/Search';
 import useScrollUp from 'hooks/useScrollUp';
 
 import Profile from './Profile';
@@ -24,10 +24,10 @@ const Header = ({ type }: { type?: 'home' }) => {
       <Box
         className={isHome ? `` : `${isScrolledUp ? '' : 'stickyHeader'}`}
         as="header"
-        sx={isHome ? undefined : { background: 'white', shadow: 'md' }}
+        sx={isHome ? undefined : { shadow: 'md' }}
         zIndex={10}
       >
-        <Container py={{ base: 4, md: isScrolledUp && !isHome ? 8 : 4 }}>
+        <Container py={{ base: 4, sm: isScrolledUp ? 8 : 4 }}>
           <Flex align="center" justify="space-between">
             <CKLink href="/home">
               <CKImage src={logoImg} width={{ base: '96px', sm: '186px' }} height={{ base: '4', sm: '8' }} />
@@ -36,10 +36,10 @@ const Header = ({ type }: { type?: 'home' }) => {
               {isScrolledUp ? (
                 <Breadcrumb fontSize={{ base: '10px', sm: 'md' }} separator="|">
                   <BreadcrumbItem>
-                    <CKLink href="freelancer-list">프리랜서 보기</CKLink>
+                    <CKLink href="/freelancer/list">프리랜서 보기</CKLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
-                    <CKLink href="project-list">프리랜서 보기</CKLink>
+                    <CKLink href="/project/list">프로젝트 보기</CKLink>
                   </BreadcrumbItem>
                 </Breadcrumb>
               ) : (

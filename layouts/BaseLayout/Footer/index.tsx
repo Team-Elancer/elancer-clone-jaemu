@@ -14,7 +14,7 @@ import CKImage from '@components/CKImage';
 import footerLogoImg from '@images/footer-logo.png';
 
 const Footer = () => (
-  <Box as="footer" color="#b7b7b7" bg="black.800">
+  <Box as="footer" color="#b7b7b7" bg="blackAlpha.800">
     <Container py={{ base: 12, sm: 14 }}>
       <Flex justify="space-between" wrap={{ base: 'wrap', sm: 'nowrap' }}>
         <VStack align="flex-start" w={{ base: 'full', sm: 'auto' }} spacing="0">
