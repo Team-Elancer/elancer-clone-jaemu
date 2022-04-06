@@ -46,7 +46,7 @@ const ArticleListItem = ({ className }: { className: string }) => {
             </SwiperSlide>
           </CKSwiper>
         </Box>
-        <LinkOverlay as={CKLink} pos="relative" w="full" href="/freelancer/list/111">
+        <LinkOverlay as={CKLink} pos="relative" w="full" href="/freelancers/111">
           <Box>
             <Flex justify="space-between" w="full">
               <VStack align="flex-start" mb="1.5">

@@ -37,7 +37,7 @@ const FreelancerDetail = () => {
     <BaseLayout>
       <Container px={{ base: 0, sm: 8 }}>
         <Center
-          h={{ base: '240px', sm: '280px' }}
+          h={{ base: '200px', sm: '220px' }}
           mx={{ base: -3, sm: 0 }}
           my={{ base: 0, sm: 9 }}
           bg="#8a7fa4"
@@ -248,6 +248,7 @@ const FreelancerDetail = () => {
         </ButtonGroup>
         <Box
           pos="fixed"
+          zIndex={20}
           bottom="5"
           left="50%"
           w={{ base: 'full', sm: theme.breakpoints.md }}

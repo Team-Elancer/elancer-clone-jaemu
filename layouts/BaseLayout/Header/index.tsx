@@ -22,14 +22,18 @@ const Header = ({ type }: { type?: 'home' }) => {
           position: 'fixed',
           top: '0',
           width: '100%',
+          shadow: 'md',
         },
       }}
     >
       <Box
         className={isHome ? `` : `${isScrolledUp ? '' : 'stickyHeader'}`}
         as="header"
-        sx={isHome ? undefined : { shadow: 'md' }}
+        pos="relative"
         zIndex={10}
+        // eslint-disable-next-line no-nested-ternary
+        shadow={isHome ? 'undefined' : colorMode === 'dark' ? 'lg' : 'md'}
+        // shadow="shadows.md"
       >
         <Container py={{ base: 4, sm: isScrolledUp ? 8 : 4 }}>
           <Flex align="center" justify="space-between">
@@ -44,10 +48,10 @@ const Header = ({ type }: { type?: 'home' }) => {
               {isScrolledUp ? (
                 <Breadcrumb fontSize={{ base: '10px', sm: 'md' }} separator="|">
                   <BreadcrumbItem>
-                    <CKLink href="/freelancer/list">프리랜서 보기</CKLink>
+                    <CKLink href="/freelancers">프리랜서 보기</CKLink>
                   </BreadcrumbItem>
                   <BreadcrumbItem>
-                    <CKLink href="/project/list">프로젝트 보기</CKLink>
+                    <CKLink href="/projects">프로젝트 보기</CKLink>
                   </BreadcrumbItem>
                 </Breadcrumb>
               ) : (

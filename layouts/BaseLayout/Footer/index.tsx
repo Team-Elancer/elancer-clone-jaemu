@@ -30,7 +30,7 @@ const MOBILE_BOTTOM_MENU = [
 ];
 
 const Footer = () => (
-  <Box as="footer" pos="relative" zIndex="10" color="#b7b7b7" bg="#333">
+  <Box as="footer" pos="relative" zIndex={30} pb={{ base: 14, sm: 0 }} color="#b7b7b7" bg="#333">
     <Container py={{ base: 12, sm: 14 }}>
       <Flex justify="space-between" wrap={{ base: 'wrap', sm: 'nowrap' }}>
         <VStack align="flex-start" w={{ base: 'full', sm: 'auto' }} spacing="0">
