@@ -7,9 +7,9 @@ import loading from '@images/svg/loading.svg';
 import { useSimpleInfiniteScroll } from 'hooks/useInfiniteScroll';
 import { axios } from 'module/client';
 
-import ArticleListItem from './ArticleListItem';
+import ArticleListItem from './Article';
 
-const FilterArticleList = (props: ChakraProps) => {
+const Articles = (props: ChakraProps) => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
@@ -44,10 +44,10 @@ const FilterArticleList = (props: ChakraProps) => {
           ))}
         </Box>
 
-        <Box ref={targetRef}>{isLoading && <Icon as={loading} w={32} h={20} />}</Box>
+        <Box ref={targetRef}>{isLoading && <Icon as={loading} w={52} h={20} />}</Box>
       </Box>
     </>
   );
 };
 
-export default FilterArticleList;
+export default Articles;

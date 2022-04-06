@@ -5,7 +5,7 @@ import { Box, Container, Text } from '@chakra-ui/react';
 import { H1 } from '@components/Heading';
 import BaseLayout from 'layouts/BaseLayout';
 
-import ArticleList from './ArticleList';
+import Articles from './Articles';
 
 const FreelancerList = () => (
   <BaseLayout>
@@ -18,8 +18,8 @@ const FreelancerList = () => (
         </H1>
       </Box>
 
-      {/* filter article list */}
-      <ArticleList />
+      {/* filter articles */}
+      <Articles />
     </Container>
   </BaseLayout>
 );
