@@ -9,7 +9,7 @@ import CKLink from '@components/CKLink';
 import CKSpan from '@components/CKSpan';
 import CKSwiper from '@components/CKSwiper';
 
-const Article = ({ className }: { className: string }) => {
+const ArticleListItem = ({ className }: { className: string }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -46,7 +46,7 @@ const Article = ({ className }: { className: string }) => {
             </SwiperSlide>
           </CKSwiper>
         </Box>
-        <LinkOverlay as={CKLink} pos="relative" w="full" href="/freelancer/111">
+        <LinkOverlay as={CKLink} pos="relative" w="full" href="/freelancers/111">
           <Box>
             <Flex justify="space-between" w="full">
               <VStack align="flex-start" mb="1.5">
@@ -88,4 +88,4 @@ const Article = ({ className }: { className: string }) => {
   );
 };
 
-export default Article;
+export default ArticleListItem;

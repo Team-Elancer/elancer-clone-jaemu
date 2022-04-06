@@ -2,9 +2,10 @@ import { mode } from '@chakra-ui/theme-tools';
 
 const global = (props) => ({
   html: { fontSize: { sm: '16px' }, fontWeight: 500 },
-  header: { bg: mode('white', '#333')(props) },
+  header: { bg: mode('white', '#252525')(props) },
   body: {
-    bg: mode('white', '#222')(props),
+    bg: mode('white', '#202020')(props),
+    color: mode('black', 'white')(props),
   },
   main: {
     minHeight: { sm: '516px' },

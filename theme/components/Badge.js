@@ -9,4 +9,7 @@ export default {
     spacing: 0,
     gap: 0.5,
   },
+  sizes: {
+    lg: { px: 3, py: 1.5, fontSize: 'lg', fontWeight: '500' },
+  },
 };

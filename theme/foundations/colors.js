@@ -1,9 +1,14 @@
 import { shadeColor } from '@utils/shadeColor';
 
 export default {
-  primary: { 500: '#000' },
+  primary: {
+    500: '#3c3c3c',
+  },
   gray: {
     500: '#8c8c8c',
+  },
+  red: {
+    500: '#cc3838',
   },
   buttonBlack: {
     500: '#333',

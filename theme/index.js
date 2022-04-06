@@ -4,7 +4,9 @@ import Badge from './components/Badge';
 import Button from './components/Button';
 import Container from './components/Container';
 import Heading, { H1, H2 } from './components/Heading';
+import Input from './components/Input';
 import Link from './components/Link';
+import Select from './components/Select';
 import colors from './foundations/colors';
 import fonts from './foundations/fonts';
 import shadows from './foundations/shadows';
@@ -24,6 +26,8 @@ const overrides = {
   components: {
     Container,
     Link,
+    Input,
+    Select,
     Heading,
     H1,
     H2,
