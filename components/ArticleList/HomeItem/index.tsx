@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
-import { Box, Button, HStack, Badge, Text } from '@chakra-ui/react';
+import { Box, Button, HStack, Badge, Text, useColorMode } from '@chakra-ui/react';
 
 import CKIcon from '@components/CKIcon';
 import CKSpan from '@components/CKSpan';
 
-const TabArticleListItem = ({ className }: { className: string }) => {
+const HomeArticleListItem = ({ className }: { className?: string }) => {
   const [isLiked, setIsLiked] = useState(false);
+
+  const { colorMode } = useColorMode();
 
   const handleLike = () => {
     setIsLiked((prev) => !prev);
@@ -19,6 +21,7 @@ const TabArticleListItem = ({ className }: { className: string }) => {
       px={{ base: 3, sm: 9 }}
       py={{ base: 3, sm: 7 }}
       fontWeight="500"
+      bg="white"
       border="2px solid #ccc"
       rounded="lg"
     >
@@ -48,7 +51,7 @@ const TabArticleListItem = ({ className }: { className: string }) => {
           </Badge>
         ))}
       </HStack>
-      <Text my={{ base: 3, sm: 4 }} fontSize={{ base: 'md', sm: 'lg' }}>
+      <Text my={{ base: 3, sm: 4 }} color="black" fontSize={{ base: 'md', sm: 'lg' }}>
         [재택] [중급/JAVA/3개월/재택] 프롭테크 플랫폼 스마트워킹 백엔드 개발
       </Text>
       <Text color="blackAlpha.600" fontSize={{ base: 'xs', sm: 'md' }} noOfLines={4}>
@@ -74,4 +77,4 @@ const TabArticleListItem = ({ className }: { className: string }) => {
   );
 };
 
-export default TabArticleListItem;
+export default HomeArticleListItem;

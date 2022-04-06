@@ -12,10 +12,10 @@ import mainBannerImg from '@images/20220308.png';
 import Footer from 'layouts/BaseLayout/Footer';
 import Header from 'layouts/BaseLayout/Header';
 
+import ArticleList from './ArticleList';
 import LinkGrid from './LinkGrid';
 import MultipleSlider from './MultipleSlider';
 import Search from './Search';
-import ArticleList from './TabArticleList';
 
 const MOBILE_BOTTOM_MENU = [
   { text: '검색', icon: searchIcon, href: '/' },

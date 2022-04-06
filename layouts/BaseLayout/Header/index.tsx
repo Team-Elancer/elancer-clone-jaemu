@@ -1,7 +1,8 @@
-import { Box, Breadcrumb, BreadcrumbItem, Center, Container, Flex } from '@chakra-ui/react';
+import { Box, Breadcrumb, BreadcrumbItem, Center, Container, Flex, useColorMode } from '@chakra-ui/react';
 
 import CKImage from '@components/CKImage';
 import CKLink from '@components/CKLink';
+import logoWhiteImg from '@images/logo-white.png';
 import logoImg from '@images/logo.png';
 import Search from '@views/Home/Search';
 import useScrollUp from 'hooks/useScrollUp';
@@ -11,6 +12,9 @@ import Profile from './Profile';
 const Header = ({ type }: { type?: 'home' }) => {
   const { isScrolledUp } = useScrollUp({ offsetY: 100 });
   const isHome = type === 'home';
+
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       sx={{
@@ -30,7 +34,11 @@ const Header = ({ type }: { type?: 'home' }) => {
         <Container py={{ base: 4, sm: isScrolledUp ? 8 : 4 }}>
           <Flex align="center" justify="space-between">
             <CKLink href="/home">
-              <CKImage src={logoImg} width={{ base: '96px', sm: '186px' }} height={{ base: '4', sm: '8' }} />
+              <CKImage
+                src={colorMode === 'light' ? logoImg : logoWhiteImg}
+                width={{ base: '96px', sm: '186px' }}
+                height={{ base: '4', sm: '8' }}
+              />
             </CKLink>
             <Center>
               {isScrolledUp ? (

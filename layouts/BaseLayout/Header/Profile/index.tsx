@@ -18,6 +18,7 @@ import {
   List,
   ListItem,
   Divider,
+  useColorMode,
 } from '@chakra-ui/react';
 
 import CKIcon from '@components/CKIcon';
@@ -36,6 +37,7 @@ const MENU_LIST = [
 const Profile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef(null);
+  const { colorMode } = useColorMode();
   return (
     <>
       {/* PC */}
@@ -47,7 +49,7 @@ const Profile = () => {
             pr="1"
             pl={{ base: 1, sm: 3 }}
             py={{ base: 0, sm: 5 }}
-            bg="#fff"
+            bg={colorMode === 'light' ? 'white' : '#4b4b4b'}
             border="2px"
             borderColor="rgba(225,225,225,1)"
             borderRadius="full"
