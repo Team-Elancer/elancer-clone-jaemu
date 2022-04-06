@@ -9,7 +9,7 @@ import CKLink from '@components/CKLink';
 import CKSpan from '@components/CKSpan';
 import CKSwiper from '@components/CKSwiper';
 
-const ArticleListItem = ({ className }: { className: string }) => {
+const Article = ({ className }: { className: string }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -88,4 +88,4 @@ const ArticleListItem = ({ className }: { className: string }) => {
   );
 };
 
-export default ArticleListItem;
+export default Article;
