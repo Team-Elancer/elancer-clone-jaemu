@@ -8,13 +8,29 @@ import {
   Text,
   VStack,
   Stack,
+  Button,
+  ButtonGroup,
 } from '@chakra-ui/react';
 
+import CKIcon from '@components/CKIcon';
+import cardTextIcon from '@components/CKIcon/svgs/card-text.svg';
+import heartIcon from '@components/CKIcon/svgs/heart.svg';
+import peopleIcon from '@components/CKIcon/svgs/people.svg';
+import PersonCircleIcon from '@components/CKIcon/svgs/person-circle.svg';
+import searchIcon from '@components/CKIcon/svgs/search.svg';
 import CKImage from '@components/CKImage';
 import footerLogoImg from '@images/footer-logo.png';
 
+const MOBILE_BOTTOM_MENU = [
+  { text: '검색', icon: searchIcon, href: '/' },
+  { text: '찜목록', icon: heartIcon, href: '/' },
+  { text: '프리랜서', icon: peopleIcon, href: '/' },
+  { text: '프로젝트', icon: cardTextIcon, href: '/' },
+  { text: '마이보드', icon: PersonCircleIcon, href: '/' },
+];
+
 const Footer = () => (
-  <Box as="footer" color="#b7b7b7" bg="blackAlpha.800">
+  <Box as="footer" pos="relative" zIndex="10" color="#b7b7b7" bg="#333">
     <Container py={{ base: 12, sm: 14 }}>
       <Flex justify="space-between" wrap={{ base: 'wrap', sm: 'nowrap' }}>
         <VStack align="flex-start" w={{ base: 'full', sm: 'auto' }} spacing="0">
@@ -64,6 +80,16 @@ const Footer = () => (
         </Stack>
       </Box>
     </Container>
+
+    {/* mobile bottom nav */}
+    <ButtonGroup pos="fixed" bottom="0" d={{ base: 'block', sm: 'none' }} w="full" py="3" bg="white" spacing={0}>
+      {MOBILE_BOTTOM_MENU.map((item) => (
+        <Button key={item.text} w="20%" color="#888" fontSize="xs" variant="unstyled">
+          <CKIcon icon={item.icon} display="block" mb="1.5" />
+          {item.text}
+        </Button>
+      ))}
+    </ButtonGroup>
   </Box>
 );
 

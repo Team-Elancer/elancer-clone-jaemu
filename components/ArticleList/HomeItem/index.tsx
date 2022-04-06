@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
-import { Box, Button, HStack, Badge, Text, useColorMode } from '@chakra-ui/react';
+import { Box, Button, HStack, Badge, Text } from '@chakra-ui/react';
 
 import CKIcon from '@components/CKIcon';
 import CKSpan from '@components/CKSpan';
 
 const HomeArticleListItem = ({ className }: { className?: string }) => {
   const [isLiked, setIsLiked] = useState(false);
-
-  const { colorMode } = useColorMode();
 
   const handleLike = () => {
     setIsLiked((prev) => !prev);
@@ -37,7 +35,7 @@ const HomeArticleListItem = ({ className }: { className?: string }) => {
         onClick={handleLike}
         rounded="full"
       >
-        {isLiked ? <CKIcon name="heart-fill" fill="black" /> : <CKIcon name="heart" />}
+        {isLiked ? <CKIcon name="heart-fill" fill="black" /> : <CKIcon name="heart" fill="black" />}
       </Button>
       <HStack flexWrap="wrap" gap={{ base: 1, sm: 2 }} w={{ base: '84%', sm: '100%' }} spacing="0">
         {['개발자', '재택', '#3개월', '#재택', '1,395만원'].map((item, index) => (

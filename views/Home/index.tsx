@@ -1,11 +1,5 @@
-import { Container, Box, Flex, VStack, Text, Divider, HStack, Button, ButtonGroup } from '@chakra-ui/react';
+import { Container, Box, Flex, VStack, Text, Divider, HStack } from '@chakra-ui/react';
 
-import CKIcon from '@components/CKIcon';
-import cardTextIcon from '@components/CKIcon/svgs/card-text.svg';
-import heartIcon from '@components/CKIcon/svgs/heart.svg';
-import peopleIcon from '@components/CKIcon/svgs/people.svg';
-import PersonCircleIcon from '@components/CKIcon/svgs/person-circle.svg';
-import searchIcon from '@components/CKIcon/svgs/search.svg';
 import CKImage from '@components/CKImage';
 import { H1 } from '@components/Heading';
 import mainBannerImg from '@images/20220308.png';
@@ -16,14 +10,6 @@ import ArticleList from './ArticleList';
 import LinkGrid from './LinkGrid';
 import MultipleSlider from './MultipleSlider';
 import Search from './Search';
-
-const MOBILE_BOTTOM_MENU = [
-  { text: '검색', icon: searchIcon, href: '/' },
-  { text: '찜목록', icon: heartIcon, href: '/' },
-  { text: '프리랜서', icon: peopleIcon, href: '/' },
-  { text: '프로젝트', icon: cardTextIcon, href: '/' },
-  { text: '마이보드', icon: PersonCircleIcon, href: '/' },
-];
 
 const Home = () => (
   <>
@@ -143,16 +129,6 @@ const Home = () => (
 
     {/* footer */}
     <Footer />
-
-    {/* mobile bottom nav */}
-    <ButtonGroup d={{ base: 'block', sm: 'none' }} w="full" py="3" spacing={0}>
-      {MOBILE_BOTTOM_MENU.map((item) => (
-        <Button key={item.text} w="20%" color="#888" fontSize="xs" variant="unstyled">
-          <CKIcon icon={item.icon} display="block" mb="1.5" />
-          {item.text}
-        </Button>
-      ))}
-    </ButtonGroup>
   </>
 );
 

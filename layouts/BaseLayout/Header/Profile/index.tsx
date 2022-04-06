@@ -62,11 +62,16 @@ const Profile = () => {
             }
             variant="outline"
           />
-          <MenuList zIndex="10" bg="white">
-            {MENU_LIST.map((item) => (
-              <MenuItem key={`${item.text}PC`}>
-                <CKLink href={item.href}>{item.text}</CKLink>
-              </MenuItem>
+          <MenuList zIndex="10" py="2" color="black" fontSize="sm" bg="white">
+            {MENU_LIST.map((item, index) => (
+              <Fragment key={`${item.text}PC`}>
+                <MenuItem>
+                  <CKLink href={item.href} px="2" fontWeight={!(index === 0 || index === 1) ? 'bold' : undefined}>
+                    {item.text}
+                  </CKLink>
+                </MenuItem>
+                {index === 1 && <Divider w="90%" mx="auto" my="3" bg="#e1e1e1" />}
+              </Fragment>
             ))}
           </MenuList>
         </Menu>
