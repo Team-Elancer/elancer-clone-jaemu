@@ -248,8 +248,8 @@ const FreelancerDetail = () => {
         </ButtonGroup>
         <Box
           pos="fixed"
-          zIndex={20}
-          bottom="5"
+          zIndex={{ base: 40, sm: 20 }}
+          bottom={{ base: 16, sm: 4 }}
           left="50%"
           w={{ base: 'full', sm: theme.breakpoints.md }}
           px={{ base: 0, sm: 8 }}
