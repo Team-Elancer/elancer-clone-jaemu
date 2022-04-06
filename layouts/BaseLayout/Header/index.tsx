@@ -22,7 +22,6 @@ const Header = ({ type }: { type?: 'home' }) => {
           position: 'fixed',
           top: '0',
           width: '100%',
-          shadow: 'md',
         },
       }}
     >

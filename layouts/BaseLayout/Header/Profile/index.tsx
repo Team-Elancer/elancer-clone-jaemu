@@ -27,7 +27,7 @@ import CKLink from '@components/CKLink';
 import avatarImg from '@images/avatar.png';
 
 const MENU_LIST = [
-  { text: '로그인', href: '/' },
+  { text: '로그인', href: '/login' },
   { text: '회원가입', href: '/' },
   { text: '커뮤니티', href: '/' },
   { text: '이용안내', href: '/' },
