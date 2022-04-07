@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 import { Box, Container, Icon, Text } from '@chakra-ui/react';
+import axios from 'axios';
 
 import ArticleListFilter from '@components/ArticleList/Filter';
 import { H1 } from '@components/Heading';
 import loading from '@images/svg/loading.svg';
 import { useSimpleInfiniteScroll } from 'hooks/useInfiniteScroll';
 import BaseLayout from 'layouts/BaseLayout';
-import { axios } from 'module/client';
 
 import ArticleListItem from './Item';
 
@@ -20,7 +20,7 @@ const FreelancerList = () => {
 
   const fetchMore = async () => {
     setIsLoading(true);
-    const res = await axios.get(`posts?_page=${page}&_limit=5`);
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=5`);
     console.log(res);
 
     if (res.data.length === 0 || res.data.length < 5) {

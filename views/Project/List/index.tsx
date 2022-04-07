@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Box, Container, Icon, Text } from '@chakra-ui/react';
 import { useColorMode } from '@chakra-ui/system';
+import axios from 'axios';
 
 import ArticleListFilter from '@components/ArticleList/Filter';
 import HomeArticleListItem from '@components/ArticleList/HomeItem';
@@ -9,7 +10,6 @@ import { H1 } from '@components/Heading';
 import loading from '@images/svg/loading.svg';
 import { useSimpleInfiniteScroll } from 'hooks/useInfiniteScroll';
 import BaseLayout from 'layouts/BaseLayout';
-import { axios } from 'module/client';
 
 const ProjectList = () => {
   const [items, setItems] = useState([]);
@@ -20,7 +20,7 @@ const ProjectList = () => {
 
   const fetchMore = async () => {
     setIsLoading(true);
-    const res = await axios.get(`posts?_page=${page}&_limit=5`);
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=5`);
     console.log(res);
 
     if (res.data.length === 0 || res.data.length < 5) {
