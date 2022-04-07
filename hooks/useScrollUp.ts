@@ -18,18 +18,19 @@ const throttle = (callback: () => void, delay: number) => {
 function useScrollingUp({ offsetY }: IProps) {
   const [isScrolledUp, setIsScrolledUp] = useState(true);
 
-  const updateScroll = () => {
-    const { scrollY } = window;
-    const isFixedTop = scrollY < offsetY;
-
-    setIsScrolledUp(isFixedTop);
-  };
   useEffect(() => {
+    const updateScroll = () => {
+      const { scrollY } = window;
+      const isFixedTop = scrollY < offsetY;
+
+      setIsScrolledUp(isFixedTop);
+    };
+
     window.addEventListener('scroll', throttle(updateScroll, 100));
     return () => {
       window.removeEventListener('scroll', () => throttle(updateScroll, 100));
     };
-  }, [updateScroll]);
+  }, []);
 
   return { isScrolledUp };
 }
