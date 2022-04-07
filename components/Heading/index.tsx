@@ -116,3 +116,5 @@ if (__DEV__) H3.displayName = 'H3';
 if (__DEV__) H4.displayName = 'H4';
 if (__DEV__) H5.displayName = 'H5';
 if (__DEV__) H6.displayName = 'H6';
+
+export default H2;
